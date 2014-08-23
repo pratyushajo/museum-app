@@ -1,0 +1,18 @@
+<div class="gallery">
+ {{#each}}
+ 
+ <div class='card'>
+ 	<h2>{{title}} <i class="fa fa-play-circle-o" {{action 'play' this}}></i></h2>
+ 	<img {{bind-attr src='img'}}>
+	<div class='stats'>
+	 	3 visits 15 likes 3 comments
+ 	</div>
+	<div class='comments'>
+		<div class='buttons'>
+			<i class="fa fa-thumbs-o-up"></i> like <i class="fa fa-comments-o"></i> comment
+		</div>	
+	</div>	
+</div>
+
+ {{/each}}
+</div>

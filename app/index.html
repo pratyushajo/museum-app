@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MyNewApp</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+
+
+    {{BASE_TAG}}
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/my-new-app.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+  </head>
+  <body>
+    <script>
+      window.MyNewAppENV = {{ENV}};
+      window.EmberENV = window.MyNewAppENV.EmberENV;
+    </script>
+
+    <script src="assets/vendor.js"></script>
+    <script src="assets/my-new-app.js"></script>
+	
+     <script src="http://builds.dockyard.com.s3.amazonaws.com/ember-validations/canary/shas/2ff28c6ba4d227b0f863b327cdff23c381c37afb/ember-validations.min.js"></script>
+    <script>
+      window.MyNewApp = require('my-new-app/app')['default'].create(MyNewAppENV.APP);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+{{#if loggedout}}   
+    <div class="ip-box">
+        {{#if isNotValid}}
+        <span style="color: red;font-size: 15px; padding-left: 20px;margin-top: 20px;">
+        	<strong>Missing zip code and birthday</strong>
+        </span>
+        {{/if}}
+        <br>
+        {{input type="email" valueBinding="email" placeholder="Email (optional)"}}
+        <br> 
+        {{input valueBinding="zip" placeholder="Zip Code"}}
+		<br>
+		<label>Birthday</label>
+		<br>
+		{{input type="number" valueBinding="day" placeholder="Day" min="1" max="31" class="day"}}
+		{{input type="number" valueBinding="month" placeholder="Month" min="1" max="12" class="month"}}
+		{{input type="number" valueBinding="year" placeholder="Year" min="1914" max="2014" class="year"}}		
+		<br>
+		{{view Ember.Select content=gender value=selectedGender classNames="gender"}}
+		<p class="mailing-list">
+			
+			{{view Ember.Checkbox checkedBinding="newsletter"}}
+			<label class="checkbox" for="mailing-list">Receive Newsletters</label>
+		</p>
+		<button class="submit" type="button"  {{action 'save'}}>Submit</button>
+	</div>
+{{else}}
+	<div class="ip-box">
+		<p class="login_message"><font face="Gill Sans">Welcome to Computer History Museum !</font></p>
+		<p class="para">Thank you for registering with us! Navigate with the menu on the right. Check your inbox for newsletters and more.</p>
+
+		<button class="submit" type="button"  {{action 'logout'}}><i class="fa fa-power-off"></i>Logout</button>
+	</div>
+{{/if}}
