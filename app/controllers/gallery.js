@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
+	text: "",
 	play: function(gal){
 		//Write script to break text into 100
 		
@@ -23,18 +24,29 @@ export default Ember.ArrayController.extend({
 		addFavorites: function(id){
 				var store = this.store;
 				var galleryChild = this.get('content').objectAt(id-1); //.content[id-1];
+				var fav = galleryChild.get('isFavorite');
+				if(fav){
+					this.set('text', "Already a favorite");
+					console.log("Already a favorite");
+				}
+				else{
+					//var gal = store.find('gallery', {id: this.id});
+					//debugger;
+					//galleryChild.set('isFavorite', true);
+					console.log('Favorite created');
+				}
 				//debugger;
 				//console.log(galleryChild.get('title'));
 				
-				var favorite = store.createRecord('favorite');
-				 favorite.get('gallery').then(function(gal){
-					 gal.pushObject(galleryChild);
-				 });
-			
-			
-				favorite.save().then(function(){
-					console.log("Record saved in database");
-				});	
+				// var favorite = store.createRecord('favorite');
+// 				 favorite.get('gallery').then(function(gal){
+// 					 gal.pushObject(galleryChild);
+// 				 });
+//
+//
+// 				favorite.save().then(function(){
+// 					console.log("Record saved in database");
+// 				});
 			}
 	}
 });

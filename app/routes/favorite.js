@@ -2,6 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
  model: function() {
-     return this.store.find('gallery', {isFavorite: true});
+	 var store = this.store;
+     return store.find('gallery').then(function(gal){
+		 debugger;
+		 return store.filter('gallery', {isFavorite: true});
+     })
+	 //, {isFavorite: true}
  }
 });
