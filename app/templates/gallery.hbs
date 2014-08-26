@@ -1,15 +1,17 @@
 <div class="gallery">
+ 	 <p class="gallerytitle">Gallery Showcase</p>
  {{#each}}
- 
+
+
  <div class='card'>
- 	<h2>{{#link-to 'artwork' id class="link"}}{{title}}{{/link-to}} <i class="fa fa-play-circle-o" {{action 'play' this}}></i></h2>
+<h2>{{#link-to 'artwork' id class="link"}}{{title}}{{/link-to}} <i class="fa fa-play-circle-o" {{action 'play' this}}></i></h2>
  	<img {{bind-attr src='img'}}> {{desc}}
 	<div class='stats'>
 	 	3 visits 15 likes 3 comments
  	</div>
 	<div class='comments'>
 		<div class='buttons'>
-			<i class="fa fa-thumbs-o-up" {{action 'addFavorites' id}}></i> like <i class="fa fa-comments-o"></i> comment
+			<button {{action 'addFavorites' id}}><i class="fa fa-thumbs-o-up"></i> like</button> <i class="fa fa-comments-o"></i> comment
 		</div>	
 	</div>	
 </div>

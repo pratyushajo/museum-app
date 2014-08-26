@@ -15,6 +15,13 @@ li, [data-ember-action] {
 #map {
     height: 700px;
 }
+.gallery .card .comments .buttons button {
+  font-family: "Avenir Next";
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
 
 .fa {
     width: 40px;
@@ -71,13 +78,9 @@ li, [data-ember-action] {
     // opacity: 0.9;
     padding-top: 55px;
     margin-right: 54px;
-	.link{
-		text-decoration:none;
-		color:black;
-	}
 
 }
-.artwork {
+.favorite {
     position: absolute;
     width: 100%;
     background-color: #fff;
@@ -86,6 +89,34 @@ li, [data-ember-action] {
     padding-top: 55px;
     margin-right: 54px;
 
+}
+.gallery .link {
+  text-decoration: none;
+  color: black;
+}
+.gallerytitle {
+    font-family: "Avenir Next";
+    font-size: 30px;
+    margin-bottom: 10px;
+    width: 80%;
+    margin-top: 0px;
+    margin-left: 10px;
+    color: #b81a36;
+}
+.artwork {
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  // height: 100%;
+  padding-top: 55px;
+  margin-right: 54px;
+}
+.allartwork {
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  padding-top: 55px;
+  margin-right: 54px;
 }
 body {
     background: url(/assets/img/main.jpg);
@@ -232,36 +263,25 @@ div {
             color: #000000;
             margin-top: 20px;
             }
-        input[type="email"], input[type="text"]{
+        input[type="email"],input[type="date"], input[type="text"]{
             height: 40px;
             width: 230px;
             padding-left: 10px;
             padding-right: 10px;
             background-color: rgba(255,255,255,1);
             border: 0px solid transparent;
+            &::-webkit-input-placeholder { 
+                        color: #000000;
+            }
+
             border-bottom: 1px solid #999;
-            }
-        input[type="text"] {
-            margin-bottom: 20px;
-        }
-        input[type="number"]{
-            height: 40px;
-            padding-left: 5px;
-            padding-right: 5px;
-            margin-left: 4px;
-            margin-top: 0px;
-            background-color: rgba(255,255,255,1);
-            border: 0px solid transparent;
-            border-bottom: 1px solid #999;
-            &.day {
-                 width: 50px;
-            }
-            &.month {
-                 width: 80px;
-            }
-            &.year {
-                 width: 60px;
-            }
+            &.fColor {
+                    color: red;
+                    &::-webkit-input-placeholder { 
+                        color: red;
+                    }
+                }
+            
             }
         ::-webkit-input-placeholder {
           color: #33334C;
@@ -304,7 +324,23 @@ div {
             border-bottom: 1px solid #999;
             // margin-left: 17%;
             }
-
+        .genderfColor {
+            margin-top: 20px;
+            text-align: center;
+            height: 40px;
+            width: 250px;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: rgba(255,255,255,1);
+            font-size: 18px;
+            color: red;
+            border: 0px solid transparent;
+            border-bottom: 1px solid #999;
+            // margin-left: 17%;
+            &::-webkit-input-placeholder { 
+                        color: red;
+                    }
+            }    
         p {
             margin-top: 20px;
             margin-bottom: 20px;

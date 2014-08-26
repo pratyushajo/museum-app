@@ -57,6 +57,13 @@ li,
   text-align: center;
   margin: 5px 5px 0px 5px;
 }
+.card .comments .buttons button {
+  font-family: "Avenir Next";
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
 .gallery {
   position: absolute;
   width: 100%;
@@ -72,9 +79,14 @@ li,
   position: absolute;
   width: 100%;
   background-color: #fff;
-  height: 100%;
   padding-top: 55px;
   margin-right: 54px;
+}
+.artwork p.gallerytitle {
+  font-family: "Avenir Next";
+  font-size: 30px;
+  font-weight: none;
+  margin-bottom: 10px;
 }
 body {
   background: url(/assets/img/main.jpg);

@@ -1,22 +1,45 @@
 {{#if loggedout}}   
     <div class="ip-box">
-        {{#if isNotValid}}
-        <span style="color: red;font-size: 15px; padding-left: 20px;margin-top: 20px;">
-        	<strong>Missing zip code and birthday</strong>
-        </span>
+        {{#if emailVal}}
+        	{{input type="email" valueBinding="email" placeholder="Email (optional)"}}
+        {{else}}
+        	{{input type="email" class ="fColor" valueBinding="email"}}
         {{/if}}
-        <br>
-        {{input type="email" valueBinding="email" placeholder="Email (optional)"}}
         <br> 
-        {{input valueBinding="zip" placeholder="Zip Code"}}
-		<br>
-		<label>Birthday</label>
-		<br>
-		{{input type="number" valueBinding="day" placeholder="Day" min="1" max="31" class="day"}}
-		{{input type="number" valueBinding="month" placeholder="Month" min="1" max="12" class="month"}}
-		{{input type="number" valueBinding="year" placeholder="Year" min="1914" max="2014" class="year"}}		
-		<br>
-		{{view Ember.Select content=gender value=selectedGender classNames="gender"}}
+        {{#if zipVal}}
+        	{{input valueBinding="zip" placeholder="Zip Code"}}
+        {{else}}
+        	{{input valueBinding="zip" class ="fColor" placeholder="Zip Code"}}
+        {{/if}}
+		
+		{{#unless birthdayClicked}}
+			<input type="text" placeholder="Birthday" {{action "birthdayClickedAction"}}/>
+		{{/unless}}
+		{{#if birthdayClicked}}
+			{{#if dayVal}}
+				{{input type="date" valueBinding="day" }}
+			{{else}}
+				{{input type="date" valueBinding="day" class="fColor"}}
+			{{/if}}
+		{{/if}}
+		
+
+{{!-- 		{{#if monthVal}}
+			{{input type="number" valueBinding="month" placeholder="Month" min="1" max="12" class="month"}}
+		{{else}}
+			{{input type="number" valueBinding="month" placeholder="Month" min="1" max="12" class="monthfColor"}}
+		{{/if}}
+		{{#if yearVal}}
+			{{input type="number" valueBinding="year" placeholder="Year" min="1974" max="2014" class="year"}}
+		{{else}}
+			{{input type="number" valueBinding="year" placeholder="Year" min="1974" max="2014" class="yearfColor"}}
+		{{/if}}
+ --}}		<br>
+		{{#if genderVal}}
+		{{view Ember.Select content=gender value=selectedGender classNames="gender" prompt="Gender"}}
+		{{else}}
+		{{view Ember.Select content=gender value=selectedGender classNames="genderfColor" prompt="Gender"}}
+		{{/if}}
 		<p class="mailing-list">
 			
 			{{view Ember.Checkbox checkedBinding="newsletter"}}

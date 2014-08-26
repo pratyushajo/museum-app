@@ -1,9 +1,12 @@
-<div class="gallery">
+<div class="allartwork">
+	 <p class="gallerytitle">Artwork Showcase</p>
+
  {{#each}}
- 
  <div class='card'>
- 	<h2>{{title}} <i class="fa fa-play-circle-o" {{action 'play' this}}></i></h2>
+	 
+ 	<h2>{{title}}</h2>
  	<img {{bind-attr src='img'}}>
+ 	{{desc}}
 	<div class='stats'>
 	 	3 visits 15 likes 3 comments
  	</div>

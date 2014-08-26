@@ -5,17 +5,10 @@ var Artwork = DS.Model.extend({
 	galleryId: DS.attr('number'),
     img: DS.attr('string'),
 	desc: DS.attr('string'),
+	galleryTitle: DS.attr('string'),
 	date: DS.attr('date'),
 	copyrightOwner: DS.attr('string'),
 	source: DS.attr('string')
 });
-
-//      Artwork.reopenClass({
-//      	//include
-
-// 	FIXTURES: [
-
-//     ]
-// });
 
 export default Artwork;

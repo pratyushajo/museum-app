@@ -15,6 +15,13 @@ li,
 #map {
   height: 700px;
 }
+.gallery .card .comments .buttons button {
+  font-family: "Avenir Next";
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
 .fa {
   width: 40px;
   text-align: center;
@@ -64,15 +71,38 @@ li,
   padding-top: 55px;
   margin-right: 54px;
 }
+.favorite {
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  height: 100%;
+  padding-top: 55px;
+  margin-right: 54px;
+}
 .gallery .link {
   text-decoration: none;
   color: black;
+}
+.gallerytitle {
+  font-family: "Avenir Next";
+  font-size: 30px;
+  margin-bottom: 10px;
+  width: 80%;
+  margin-top: 0px;
+  margin-left: 10px;
+  color: #b81a36;
 }
 .artwork {
   position: absolute;
   width: 100%;
   background-color: #fff;
-  height: 100%;
+  padding-top: 55px;
+  margin-right: 54px;
+}
+.allartwork {
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
   padding-top: 55px;
   margin-right: 54px;
 }
@@ -218,6 +248,7 @@ div.ip-box input {
   margin-top: 20px;
 }
 div.ip-box input[type="email"],
+div.ip-box input[type="date"],
 div.ip-box input[type="text"] {
   height: 40px;
   width: 230px;
@@ -227,27 +258,20 @@ div.ip-box input[type="text"] {
   border: 0px solid transparent;
   border-bottom: 1px solid #999;
 }
-div.ip-box input[type="text"] {
-  margin-bottom: 20px;
+div.ip-box input[type="email"]::-webkit-input-placeholder,
+div.ip-box input[type="date"]::-webkit-input-placeholder,
+div.ip-box input[type="text"]::-webkit-input-placeholder {
+  color: #000000;
 }
-div.ip-box input[type="number"] {
-  height: 40px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: 4px;
-  margin-top: 0px;
-  background-color: #ffffff;
-  border: 0px solid transparent;
-  border-bottom: 1px solid #999;
+div.ip-box input[type="email"].fColor,
+div.ip-box input[type="date"].fColor,
+div.ip-box input[type="text"].fColor {
+  color: red;
 }
-div.ip-box input[type="number"].day {
-  width: 50px;
-}
-div.ip-box input[type="number"].month {
-  width: 80px;
-}
-div.ip-box input[type="number"].year {
-  width: 60px;
+div.ip-box input[type="email"].fColor::-webkit-input-placeholder,
+div.ip-box input[type="date"].fColor::-webkit-input-placeholder,
+div.ip-box input[type="text"].fColor::-webkit-input-placeholder {
+  color: red;
 }
 div.ip-box ::-webkit-input-placeholder {
   color: #33334C;
@@ -276,6 +300,22 @@ div.ip-box .gender {
   color: #000000;
   border: 0px solid transparent;
   border-bottom: 1px solid #999;
+}
+div.ip-box .genderfColor {
+  margin-top: 20px;
+  text-align: center;
+  height: 40px;
+  width: 250px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #ffffff;
+  font-size: 18px;
+  color: red;
+  border: 0px solid transparent;
+  border-bottom: 1px solid #999;
+}
+div.ip-box .genderfColor::-webkit-input-placeholder {
+  color: red;
 }
 div.ip-box p {
   margin-top: 20px;

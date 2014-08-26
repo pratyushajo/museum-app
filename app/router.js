@@ -8,7 +8,7 @@ Router.map(function() {
   this.route('gallery');
   this.route('artwork', {'path' : '/gallery/:galleryId'});
   this.route('allartwork');
-  this.route('registration');
+  this.route('registration', {'path': '/'});
   this.route('map');
   this.route('about');
   this.route('favorite');
